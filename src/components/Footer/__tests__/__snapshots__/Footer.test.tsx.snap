@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Footer correctly 1`] = `
+<div
+  class="absolute inset-x-0 bottom-0 h-21 flex flex-col pb-4 justify-center items-center md:flex-row"
+>
+  <div>
+    <img
+      alt="Bitnovo logo"
+      class="flex-none"
+      data-nimg="1"
+      decoding="async"
+      height="200"
+      loading="lazy"
+      src="/_next/image?url=%2Fimg.jpg&w=640&q=75"
+      srcset="/_next/image?url=%2Fimg.jpg&w=256&q=75 1x, /_next/image?url=%2Fimg.jpg&w=640&q=75 2x"
+      style="color: transparent;"
+      width="200"
+    />
+  </div>
+  <p
+    class="text-brand-gray text-xs"
+  >
+     
+    © 
+    2024
+     Bitnovo. All rights reserved.
+  </p>
+</div>
+`;
