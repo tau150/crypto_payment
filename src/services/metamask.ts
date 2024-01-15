@@ -22,6 +22,7 @@ export const requestAccount = async (
 
       onSuccess("Transacción realizada con éxito, aguarde mientras se termina de procesar");
     } catch (error) {
+      console.log("Error with Metamask connection", (error as Error).message);
       const errorMessage = getMetamaskErrorMessage((error as Error).message);
 
       onError(errorMessage);
