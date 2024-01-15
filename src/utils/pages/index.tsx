@@ -9,6 +9,7 @@ export const formatCurrenciesForSelect = (currencies: Currency[]) => {
       </div>
     ),
     value: currency.symbol,
+    searchableLabel: currency.name.split(" ")[0],
     imageSrc: currency.image,
   }));
 };

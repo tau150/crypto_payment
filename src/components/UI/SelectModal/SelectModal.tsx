@@ -35,7 +35,12 @@ const SelectModal = ({ name, label, value, onSelect, tooltipText, options }: Pro
     const { value } = e.target;
 
     setAvailableOptions(
-      options.filter((option) => option.value.toLowerCase().includes(value.toLowerCase())),
+      options.filter((option) => {
+        const secondaryOption = typeof option.label === "string" ? option.label : option.value;
+        const valueToSearch = option.searchableLabel ? option.searchableLabel : secondaryOption;
+
+        return valueToSearch.toLowerCase().includes(value.toLowerCase());
+      }),
     );
   };
 

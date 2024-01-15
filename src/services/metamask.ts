@@ -22,7 +22,9 @@ export const requestAccount = async (
         value: ethers.utils.parseEther(amount),
       });
 
-      onSuccess("Transacción realizada con éxito, aguarde mientras se termina de procesar");
+      onSuccess(
+        "Transacción realizada con éxito, aguarde mientras se termina de procesar, esto puede llevar unos minutos, aguarde en la pantalla",
+      );
     } catch (error) {
       const errorMessage = getMetamaskErrorMessage((error as Error).message);
 
