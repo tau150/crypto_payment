@@ -67,9 +67,10 @@ export default function Home({ currencies, isError }: Props) {
   const isValidationError =
     amount === "" || Number(amount) < minAmount || Number(amount) > maxAmount;
 
-  const helpText = isValidationError
-    ? `min: ${selectedCurrency.min_amount} - max: ${selectedCurrency.max_amount} `
-    : undefined;
+  const helpText =
+    isValidationError && amount !== "" && amount !== "0"
+      ? `min: ${selectedCurrency.min_amount} - max: ${selectedCurrency.max_amount} `
+      : undefined;
 
   return (
     <main className="flex justify-center pt-10 md:pt-0">
