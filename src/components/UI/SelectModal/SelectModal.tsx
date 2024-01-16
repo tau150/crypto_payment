@@ -2,10 +2,10 @@ import type { Option as OptionInterface } from "./SelectModal.types";
 
 import React from "react";
 import { useState } from "react";
-import { CiSearch } from "react-icons/ci";
-import { RxCaretDown } from "react-icons/rx";
 import Image from "next/image";
 
+import SearchIcon from "@/components/UI/Icons/SearchIcon";
+import CaretDownIcon from "@/components/UI/Icons/CaretDownIcon";
 import Input from "@/components/UI/Input/Input";
 import Modal from "@/components/UI/Modal/Modal";
 
@@ -75,13 +75,13 @@ const SelectModal = ({ name, label, value, onSelect, tooltipText, options }: Pro
         <div className="[&>div]:flex [&>div]:items-end  [&>div>p]:mr-1 [&>div>p]:font-normal [&>div>p]:text-sm [&>div>p]:text-brand-primary">
           {selectedOption?.label}
         </div>
-        <RxCaretDown className="absolute right-3 text-gray-400 size-7" />
+        <CaretDownIcon className="absolute right-3 text-gray-400 size-7" />
       </div>
       <Modal handleClose={handleCloseModal} isOpen={isOpen}>
         {label && <InputLabel name={name} text={label} />}
         <div className="mt-4">
           <Input
-            icon={<CiSearch />}
+            icon={<SearchIcon />}
             name="concept"
             placeholder="Buscar"
             type="text"

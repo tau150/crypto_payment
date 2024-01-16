@@ -1,5 +1,4 @@
-import { FaSpinner } from "react-icons/fa";
-
+import ButtonSpinnerIcon from "@/components/UI/Icons/ButtonSpinnerIcon";
 interface Props {
   text: string;
   type?: "button" | "submit" | "reset";
@@ -17,7 +16,7 @@ const Button = ({ text, type = "button", isDisabled, isLoading, onClick, classNa
       type={type}
       onClick={onClick}
     >
-      {isLoading ? <FaSpinner className="animate-spin size-6" /> : text}
+      {isLoading ? <ButtonSpinnerIcon className="animate-spin size-6" /> : text}
     </button>
   );
 };

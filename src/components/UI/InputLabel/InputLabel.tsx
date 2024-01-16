@@ -1,6 +1,6 @@
-import { CiCircleInfo } from "react-icons/ci";
 import { Tooltip } from "react-tooltip";
 
+import InfoTooltipIcon from "../Icons/InfoTooltipIcon";
 interface Props {
   name: string;
   text: string;
@@ -16,11 +16,7 @@ const InputLabel = ({ name, text, tooltipText }: Props) => {
       {text}
       {tooltipText && (
         <div>
-          <CiCircleInfo
-            className="ml-1"
-            data-tooltip-content={tooltipText}
-            data-tooltip-id={name}
-          />
+          <InfoTooltipIcon className="ml-1 size-5" tooltipId={name} tooltipText={tooltipText} />
           <Tooltip id={name} />
         </div>
       )}

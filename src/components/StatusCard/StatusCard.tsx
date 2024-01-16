@@ -1,12 +1,12 @@
 import React from "react";
-import { GoCheckCircleFill } from "react-icons/go";
-import { MdCancel } from "react-icons/md";
 import Link from "next/link";
 
 import Button from "@/components/UI/Button/Button";
 import Card from "@/components/UI/Card/Card";
 import { PAYMENT_PROCESS_STATUS } from "@/domain/Payment";
 import { ROUTES } from "@/types/routes";
+import CheckIcon from "@/components/UI/Icons/CheckIcon";
+import ErrorIcon from "@/components/UI/Icons/ErrorIcon";
 interface Props {
   status: PAYMENT_PROCESS_STATUS;
   title: string;
@@ -14,12 +14,8 @@ interface Props {
 }
 
 const PROCESS_STATUS_ICON = {
-  [PAYMENT_PROCESS_STATUS.CANCEL]: (
-    <MdCancel className="text-rose-400 size-14" data-testid="cancel-icon" />
-  ),
-  [PAYMENT_PROCESS_STATUS.SUCCESS]: (
-    <GoCheckCircleFill className="text-emerald-500 size-14" data-testid="success-icon" />
-  ),
+  [PAYMENT_PROCESS_STATUS.CANCEL]: <ErrorIcon className="size-14" datatestId="cancel-icon" />,
+  [PAYMENT_PROCESS_STATUS.SUCCESS]: <CheckIcon className="size-14" datatestId="success-icon" />,
 };
 
 const StatusCard = ({ status, title, children }: Props) => {

@@ -64,8 +64,12 @@ export default function Home({ currencies, isError }: Props) {
   const minAmount = Number(selectedCurrency.min_amount);
   const maxAmount = Number(selectedCurrency.max_amount);
 
-  const isButtonDisabled =
+  const isValidationError =
     amount === "" || Number(amount) < minAmount || Number(amount) > maxAmount;
+
+  const helpText = isValidationError
+    ? `min: ${selectedCurrency.min_amount} - max: ${selectedCurrency.max_amount} `
+    : undefined;
 
   return (
     <main className="flex justify-center pt-10 md:pt-0">
@@ -74,6 +78,7 @@ export default function Home({ currencies, isError }: Props) {
         <form onSubmit={handleSubmitForm}>
           <div className="mt-2">
             <Input
+              helpText={helpText}
               label="Importe a pagar"
               max={maxAmount}
               min={minAmount}
@@ -103,7 +108,7 @@ export default function Home({ currencies, isError }: Props) {
             />
           </div>
           <Button
-            isDisabled={isButtonDisabled || isPending}
+            isDisabled={isValidationError || isPending}
             isLoading={isPending}
             text="Continuar"
             type="submit"

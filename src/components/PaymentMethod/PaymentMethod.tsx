@@ -1,4 +1,3 @@
-import { TbInfoHexagonFilled } from "react-icons/tb";
 import { useQRCode } from "next-qrcode";
 
 import { CURRENCY_CODE } from "@/domain/Currency";
@@ -6,6 +5,7 @@ import CopyToClipboard from "@/components/UI/CopyToClipboard/CopyToClipboard";
 import { PAYMENT_METHOD } from "@/domain/Payment";
 import MetamaskConnector from "@/components/MetamaskConnector/MetamaskConnector";
 import { generateQRCode } from "@/utils/payment";
+import InfoHexaIcon from "@/components/UI/Icons/InfoHexaIcon";
 
 interface Props {
   amount: number;
@@ -61,7 +61,7 @@ const PaymentMethod = ({ method, amount, symbol, address, tag }: Props) => {
         </p>
         {tag && (
           <p className="flex justify-center items-start text-xs break-all w-4/6 text-center mt-4 md:text-sm">
-            <TbInfoHexagonFilled className="size-7 cursor-pointe pb-2 ml-1 text-yellow-500" />
+            <InfoHexaIcon className="size-7 cursor-pointe pb-2 ml-1 text-yellow-500" />
             Etiqueta de destino: {tag}
             <CopyToClipboard value={tag} />
           </p>

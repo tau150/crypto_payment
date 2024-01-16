@@ -1,6 +1,6 @@
-import { FiCopy } from "react-icons/fi";
 import classNames from "classnames";
 
+import CopyClipboardIcon from "@/components/UI/Icons/CopyClipboardIcon";
 interface Props {
   value: string;
   className?: string;
@@ -13,9 +13,9 @@ const CopyToClipboard = ({ className, value }: Props) => {
   });
 
   return (
-    <FiCopy
+    <CopyClipboardIcon
       className={iconClass}
-      data-testid="copy-clipboard"
+      datatestId="copy-clipboard"
       onClick={() => {
         navigator.clipboard.writeText(value);
       }}

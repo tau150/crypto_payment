@@ -6,6 +6,7 @@ import InputLabel from "../InputLabel/InputLabel";
 interface Props {
   name: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  helpText?: string;
   icon?: ReactElement<any, string | JSXElementConstructor<any>>;
   value?: string;
   tooltipText?: string;
@@ -19,6 +20,7 @@ interface Props {
 const Input = ({
   name,
   label,
+  helpText,
   tooltipText,
   value,
   min,
@@ -55,6 +57,7 @@ const Input = ({
         value={value}
         onChange={handleOnChange}
       />
+      {helpText && <p className="ml-2 mt-1 text-xs text-gray-400">{helpText}</p>}
     </div>
   );
 };

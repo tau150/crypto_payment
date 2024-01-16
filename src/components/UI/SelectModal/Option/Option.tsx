@@ -1,6 +1,8 @@
-import { FaCircleCheck } from "react-icons/fa6";
-import { RxCaretRight } from "react-icons/rx";
 import Image from "next/image";
+
+import CaretRightIcon from "@/components/UI/Icons/CaretRightIcon";
+import CheckIcon from "@/components/UI/Icons/CheckIcon";
+
 const IMAGE_WIDTH = "36";
 
 interface Props {
@@ -26,9 +28,9 @@ const Option = ({ value, label, imageSrc, selected, onSelect }: Props) => {
         {label}
       </div>
       {selected ? (
-        <FaCircleCheck className="text-blue-400" />
+        <CheckIcon className="size-5" innerFill="#fff" opacity="1" outerFill="#70b0fd" />
       ) : (
-        <RxCaretRight className="size-7 text-gray-400" />
+        <CaretRightIcon className="size-7 text-gray-400" />
       )}
     </div>
   );

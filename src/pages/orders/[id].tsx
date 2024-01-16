@@ -4,12 +4,12 @@ import type { OrderDetailsResponse } from "@/services/types/order.types";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
-import { MdOutlineTimer } from "react-icons/md";
-import { MdVerified } from "react-icons/md";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "next/navigation";
 import { ToastContainer } from "react-toastify";
 
+import ClockIcon from "@/components/UI/Icons/ClockIcon";
+import VerifiedIcon from "@/components/UI/Icons/VerifiedIcon";
 import { getIconUrlBasedOnSymbol, formatSymbolName } from "@/utils/pages/order";
 import { PAYMENT_METHOD } from "@/domain/Payment";
 import Label from "@/components/UI/Label/Label";
@@ -119,7 +119,7 @@ export default function Order() {
           <div className="mt-6 px-2 flex justify-between">
             <span>Comercio:</span>
             <span className="flex px-2 justify-center font-semibold text-right md:text-left">
-              <MdVerified className=" text-blue-300 ml-4 md:ml-0 md:mr-1 mt-1" /> Comercio de
+              <VerifiedIcon className=" text-blue-300 ml-4 md:ml-0 md:mr-1 mt-1" /> Comercio de
               pruebas de Semega
             </span>
           </div>
@@ -140,7 +140,7 @@ export default function Order() {
         <h1 className="font-bold text-lg">Realiza un pago</h1>
         <Card className="min-w-80 mt-4">
           <div className="text-center flex justify-center items-center">
-            <MdOutlineTimer className="size-6 mr-2" />
+            <ClockIcon className="size-6 mr-2" />
             <span className="text-sm">
               <Countdown minutes={minutes} seconds={seconds} onFinish={handleOnFinish} />
             </span>
