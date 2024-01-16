@@ -1,12 +1,19 @@
-import { useEffect, useState } from "react";
+import {
+  useEffect,
+  useState,
+  forwardRef,
+  cloneElement,
+  ReactElement,
+  JSXElementConstructor,
+} from "react";
 import { createPortal } from "react-dom";
 
 interface Props {
-  children: React.ReactNode;
+  children: ReactElement<any, string | JSXElementConstructor<any>>;
   id?: string;
 }
 
-const Portal = ({ children, id = "#modal-root" }: Props) => {
+const Portal = forwardRef(({ children, id = "#modal-root" }: Props, ref) => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -15,7 +22,11 @@ const Portal = ({ children, id = "#modal-root" }: Props) => {
     return () => setMounted(false);
   }, []);
 
-  return mounted ? createPortal(children, document.querySelector(id) as HTMLElement) : null;
-};
+  return mounted
+    ? createPortal(cloneElement(children, { ref }), document.querySelector(id) as HTMLElement)
+    : null;
+});
+
+Portal.displayName = "Portal";
 
 export default Portal;

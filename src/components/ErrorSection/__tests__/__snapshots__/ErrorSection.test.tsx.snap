@@ -2,7 +2,7 @@
 
 exports[`renders ErrorSection correctly 1`] = `
 <div
-  class="shadow-md p-6 border-slate-100 rounded-lg border  h-60 w-full"
+  class="shadow-md p-6 border-slate-100 rounded-lg border h-60 w-full"
 >
   <h1
     class="flex mb-10 justify-center"
