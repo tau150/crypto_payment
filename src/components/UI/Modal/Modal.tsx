@@ -23,7 +23,7 @@ const Modal = ({ children, isOpen, handleClose }: Props) => {
       <div className="w-full h-full absolute bottom-0 top-0 z-10 flex justify-center items-center">
         <Card
           ref={modalRef}
-          className={`w-full h-full bg-white relative z-20 md:w-6/12 md:min-h-[80%] md:h-fit`}
+          className={`w-full h-full bg-white relative z-20 md:w-6/12 md:min-h-[80%] md:h-fit animate-fadeIn`}
         >
           <CloseIcon
             className="absolute right-5 size-6 cursor-pointer"
