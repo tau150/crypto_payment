@@ -7,7 +7,6 @@ Technical challenge for crypto payment.
 - Next
 - Typescript
 - Metamask
-- Tailwind
 - React query
 - Tailwind
 - Jest
